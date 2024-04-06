@@ -5,12 +5,16 @@ def main():
 
 def get_content():
     with open('./books/frankenstein.txt') as f:
-        content = f.read()
-        return content
+       return f.read().lower()
 
 def count_words(book):
     words = book.split()
     words_count = len(words)
     return words_count
+
+def get_a(book):
+    words = book.split()
+    # for word in words_
+
 
 main()
