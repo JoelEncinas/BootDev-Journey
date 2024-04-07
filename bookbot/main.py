@@ -1,7 +1,7 @@
 def main():
     book_content = get_content()
-    words = count_words(book_content)
-    print(words)
+    ocurrences = get_letter_ocurrences(book_content)
+    print(ocurrences)
 
 def get_content():
     with open('./books/frankenstein.txt') as f:
@@ -12,9 +12,16 @@ def count_words(book):
     words_count = len(words)
     return words_count
 
-def get_a(book):
-    words = book.split()
-    # for word in words_
+def get_letter_ocurrences(book):
+    letter_counts = {}
 
+    for char in book:
+        if char.isalpha(): 
+            if char in letter_counts:
+                letter_counts[char] += 1  
+            else:
+                letter_counts[char] = 1 
+    
+    return letter_counts
 
 main()
