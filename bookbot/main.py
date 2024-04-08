@@ -1,7 +1,17 @@
 def main():
+    print("--- Begin report of books/frankenstein.txt ---")
     book_content = get_content()
+    
+    words_count = count_words(book_content)
     ocurrences = get_letter_ocurrences(book_content)
-    print(ocurrences)
+    ocurrences_sorted = dict(sorted(ocurrences.items(), key=lambda item: item[1], reverse=True))
+
+    print(f"{words_count} words found in the document")
+
+    for letter, count in ocurrences_sorted.items():
+        print(f"The '{letter}' character was found {count} times")
+    
+    print("--- End report ---")
 
 def get_content():
     with open('./books/frankenstein.txt') as f:
