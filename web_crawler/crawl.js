@@ -37,7 +37,37 @@ function getURLsFromHTML(htmlBody, baseURL) {
   return urls;
 }
 
+function crawlPage(baseURL) {
+  fetch(baseURL)
+    .then((response) => {
+      if (!response.ok) {
+        if (response.status >= 400 && response.status < 500) {
+          throw new Error("Client error: " + response.status);
+        } else if (response.status >= 500 && response.status < 600) {
+          throw new Error("Server error: " + response.status);
+        } else {
+          throw new Error("Unknown error: " + response.status);
+        }
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("text/html")) {
+        throw new Error("Content needs to be html");
+      }
+
+      return response.text();
+    })
+    .then((html) => {
+      console.log("HTML content:", html);
+      return html;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
+
 module.exports = {
   normalizeURL,
   getURLsFromHTML,
+  crawlPage,
 };
