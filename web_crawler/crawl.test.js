@@ -4,6 +4,6 @@ test("pass url and normalize it", () => {
   expect(normalizeURL("https://www.wikipedia.org/")).toBe("www.wikipedia.org");
 });
 
-test("pass no url and it should log a err message", () => {
+test("log err if no url is provided", () => {
   expect(normalizeURL()).toBe("no url provided");
 });

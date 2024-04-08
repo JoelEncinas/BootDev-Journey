@@ -3,7 +3,8 @@ function normalizeURL(url) {
     return "no url provided";
   }
 
-  return url.replace("https://", "").replace(/\/$/, "");
+  const urlToNormalize = new URL(url);
+  return urlToNormalize.host;
 }
 
 module.exports = {
