@@ -4,7 +4,13 @@ function normalizeURL(url) {
   }
 
   const urlToNormalize = new URL(url);
-  return urlToNormalize.host;
+  fullPath = `${urlToNormalize.host}${urlToNormalize.pathname}`;
+
+  if (fullPath.length > 0 && fullPath.slice(-1) === "/") {
+    fullPath = fullPath.slice(0, -1);
+  }
+
+  return fullPath;
 }
 
 module.exports = {
