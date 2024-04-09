@@ -10,10 +10,15 @@ function main() {
 
   crawlPage(baseURL, baseURL)
     .then((pages) => {
-      console.log(pages);
+      console.log("\n");
+      Object.entries(pages).forEach(([key, value]) => {
+        console.log(`${key} : ${value}`);
+      });
+
+      console.log("\nCrawler finished the job!");
     })
     .catch((error) => {
-      console.error("Crawling failed:", error);
+      console.error("\nCrawling failed:", error);
     });
 }
 

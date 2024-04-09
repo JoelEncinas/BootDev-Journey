@@ -74,6 +74,7 @@ function crawlPage(baseURL, currentURL, pages = {}) {
 
           const contentType = response.headers.get("content-type");
           if (!contentType || !contentType.includes("text/html")) {
+            return;
           } else {
             return response.text();
           }
