@@ -91,6 +91,13 @@ function crawlPage(baseURL, currentURL, pages = {}) {
               }
             } else if (link.startsWith(baseURL)) {
               promises.push(crawlPage(baseURL, link, pages));
+            } else {
+              if (pages[link]) {
+                pages[link] = pages[link] + 1;
+                resolve(pages);
+              } else {
+                pages[link] = 1;
+              }
             }
           }
 
