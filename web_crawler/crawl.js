@@ -34,10 +34,12 @@ function getURLsFromHTML(htmlBody, baseURL) {
       }
     }
   }
+  console.log(urls);
+
   return urls;
 }
 
-function crawlPage(baseURL) {
+function crawlPage(baseURL, currentURL, pages) {
   fetch(baseURL)
     .then((response) => {
       if (!response.ok) {
@@ -58,12 +60,14 @@ function crawlPage(baseURL) {
       return response.text();
     })
     .then((html) => {
-      console.log("HTML content:", html);
-      return html;
+      // add all the urls to the pages object
+      getURLsFromHTML(html, baseURL);
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
+
+  // call the function recursively here
 }
 
 module.exports = {

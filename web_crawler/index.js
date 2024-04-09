@@ -18,7 +18,9 @@ function main() {
   const baseURL = args[0];
   console.log("Initializing the crawler...");
 
-  crawlPage(baseURL);
+  let pages = {};
+
+  crawlPage(baseURL, baseURL, pages);
 }
 
 main();
