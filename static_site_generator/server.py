@@ -2,6 +2,8 @@ import os
 import argparse
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
+# run server
+# python server.py --dir public
 
 class CORSHTTPRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
