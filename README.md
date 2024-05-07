@@ -4,17 +4,19 @@ Here I will archive all the projects I've done on boot.dev.
 
 My boot.dev [profile](https://www.boot.dev/u/fabulouseffect65).
 
-Currently working on: [chess-vision](https://github.com/JoelEncinas/Chess-vision)
+Currently working on: Functional programming on python
 ### Progress
 
 Completed courses:
-- Learn python
-- Learn shells and terminals
-- Learn object oriented programming
-- Learn javascript
-- Learn http
-- Learn sql
+- Python
+- Shells and Terminals
+- OOP
+- Javascript
+- HTTP
+- SQL
+- Find a job
 
 Completed projects:
-- Build a bookbot
-- Build a web crawler
+- Bookbot
+- Web crawler
+- Personal Project 1
