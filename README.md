@@ -5,9 +5,9 @@ Here I will archive all the projects I've done on boot.dev.
 My boot.dev [profile](https://www.boot.dev/u/fabulouseffect65).
 
 Currently working on: Functional programming on python
-### Progress
+## Progress
 
-Completed courses:
+### Completed courses:
 - Python
 - Shells and Terminals
 - OOP
@@ -16,7 +16,9 @@ Completed courses:
 - SQL
 - Find a job
 
-Completed projects:
+### Completed guided projects:
 - Bookbot
 - Web crawler
-- Personal Project 1
+
+### Completed personal projects:
+- Python: [Chess-scan](https://github.com/JoelEncinas/Chess-Scan) 
